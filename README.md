@@ -161,5 +161,4 @@ flowchart TD
 ## Credits
 
 
----* make this **cleaner + more “resume-grade”**
-* or add **screenshots / demo section** which boosts impact a LOT
+---
