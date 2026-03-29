@@ -15,9 +15,6 @@
 python==3.13.5
 libraries required: ultralytics opencv-python numpy
 
-
-
-
 ## What this project is
 
 This project is a **real-time AI-powered surveillance system** that detects human presence in a video feed.
@@ -57,8 +54,6 @@ This is the **integrated system** that combines:
 4. If difference exceeds threshold → run YOLO
 5. If a person is detected → save + log alert
 
----
-
 ```mermaid
 flowchart TD
     A[Camera Feed] --> B[Capture Frame]
@@ -79,44 +74,6 @@ You can tweak the system behavior using:
 * `CHECK_INTERVAL` → frame sampling rate
 * `SIMILARITY_THRESHOLD` → sensitivity to motion
 * `DETECTION_INTERVAL` → detection frequency
-
----
-
-## Overall Work Flow
-
-```mermaid
-flowchart TD
-    A[Camera Feed] --> B[Frame Sampling 1 FPS]
-    B --> C[Image Difference Calculation]
-    C --> D{Significant Change?}
-    D -->|No| E[Save Regular Frame]
-    D -->|Yes| F[Run YOLO Detection]
-    F --> G{Person Detected?}
-    G -->|No| H[Log Change Only]
-    G -->|Yes| I[Save Suspicious Frame]
-    I --> J[Log Alert Event]
-```
-
----
-
-## Limitations
-
-* Sensitive to lighting changes
-* Fixed threshold may need tuning
-* No tracking (same person counted multiple times)
-* Works best with stable camera
-
----
-
-## Future Improvements
-
-* Add object tracking (DeepSORT)
-* Replace MSE with SSIM (better accuracy)
-* Add alert system (email / Telegram)
-* Web dashboard for monitoring
-* Edge deployment (Raspberry Pi)
-
----
 
 ## Credits
 
