@@ -4,59 +4,19 @@
 
 # Smart Surveillance System
 
-## All the versions so it'll be easy to run
+## Behind the Idea
+- A dear friend home has been tresspassed, he wanted to check hours and hours of footage. So we decided to use some open source tool to unburden his missery.
+- We looked into many things like computation, we reduced the cost by using simple techniques, so it even runs on a computer with low processing power.
+- This project will help by reducing the amount of footage we have to review.
+- The log is formatted for easy understanding of what is happening.
+- The 1 second interval is to reduce the cost of computation.
+   
+## setup we had
+python==3.13.5
+- libraries required: ultralytics opencv-python numpy
 
-built with Python 3.10+ |
-ultralytics (YOLOv11) |
-OpenCV (cv2) |
-numpy
 
----
 
-## Setup and Running
-
-1. Install Python 3.12 (if not installed)
-   Download from: [https://www.python.org/downloads/](https://www.python.org/downloads/)
-
----
-
-2. Install required libraries
-   Open terminal in project directory and run:
-
-```bash
-pip install ultralytics opencv-python numpy
-```
-
----
-
-3. Clone the repository (if using git)
-
-```bash
-git clone <your-repo-link>
-```
-
-or download and unzip manually.
-
----
-
-4. Make sure you have a camera source
-
-* Webcam → default (`0`)
-* IP Camera → replace with `rtsp://...`
-
----
-
-5. Run the main system
-
-```bash
-python persim.py
-```
-
----
-
-6. Press `q` to exit the live feed window
-
----
 
 ## What this project is
 
