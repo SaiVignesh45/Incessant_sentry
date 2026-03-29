@@ -6,9 +6,9 @@
 
 ## All the versions so it'll be easy to run
 
-built with Python 3.10+
-ultralytics (YOLOv11)
-OpenCV (cv2)
+built with Python 3.10+ |
+ultralytics (YOLOv11) |
+OpenCV (cv2) |
 numpy
 
 ---
