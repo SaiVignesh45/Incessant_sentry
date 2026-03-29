@@ -13,7 +13,7 @@
    
 ## setup we had
 python==3.13.5
-- libraries required: ultralytics opencv-python numpy
+libraries required: ultralytics opencv-python numpy
 
 
 
