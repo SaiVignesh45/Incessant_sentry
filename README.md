@@ -1,15 +1,8 @@
-Alright — I see the style you’re going for:
 
-* very **structured**
-* very **explicit**
-* includes **setup + deep explanation + flowcharts**
-* slightly “student-project but thorough” vibe
-
-I’ll match that style for your surveillance project 👇
 
 ---
 
-# 🛡️ Smart Surveillance System
+# Smart Surveillance System
 
 ## All the versions so it'll be easy to run
 
@@ -22,7 +15,7 @@ numpy
 
 ## Setup and Running
 
-1. Install Python (if not installed)
+1. Install Python 3.12 (if not installed)
    Download from: [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 ---
@@ -83,13 +76,13 @@ This makes the system:
 
 ---
 
-## What all the scripts do:
+## What the script does:
 
 ---
 
-### *persim.py* ⭐ (Main System)
+### *persim.py* (Main System)
 
-This is the **final integrated system** that combines:
+This is the **integrated system** that combines:
 
 * frame sampling
 * change detection
@@ -119,113 +112,6 @@ flowchart TD
     H -->|Yes| J[Save Suspicious Frame]
     J --> K[Log ALERT]
 ```
-
----
-
-### *person_done.py* (Baseline Detection)
-
-This script performs **basic human detection**.
-
-1. Captures frame every second
-2. Runs YOLO on every frame
-3. Saves image if a person is detected
-4. Logs the event
-
-❗ Inefficient because:
-
-* AI runs even when nothing changes
-
----
-
-```mermaid
-flowchart TD
-    A[Camera Feed] --> B[Capture Frame]
-    B --> C[Run YOLO]
-    C --> D{Person Detected?}
-    D -->|Yes| E[Save Image + Log]
-    D -->|No| F[Do Nothing]
-```
-
----
-
-### *person_similar.py* (Smart Filtering)
-
-This script improves efficiency by:
-
-* detecting only **significant movement**
-* avoiding duplicate saves
-
-#### Workflow:
-
-1. Detect people using YOLO
-2. Compare with last saved frame
-3. Save only if movement is significant
-
----
-
-```mermaid
-flowchart TD
-    A[Camera Feed] --> B[Capture Frame]
-    B --> C[Run YOLO]
-    C --> D{Person Detected?}
-    D -->|No| E[Ignore]
-    D -->|Yes| F[Compare with Last Saved Frame]
-    F --> G{Difference > Threshold?}
-    G -->|No| H[Ignore Duplicate]
-    G -->|Yes| I[Save + Log Movement]
-```
-
----
-
-### *tresing.py* (Detection + Localization Demo)
-
-This script demonstrates:
-
-* how YOLO detects people
-* how to extract their position
-
-#### Features:
-
-* draws bounding boxes
-* calculates center coordinates
-* prints location of detected person
-
----
-
-```mermaid
-flowchart TD
-    A[Video Feed] --> B[Run YOLO]
-    B --> C[Get Bounding Boxes]
-    C --> D[Calculate Center Point]
-    D --> E[Draw Box + Center]
-    E --> F[Display Frame]
-```
-
----
-
-### *sho.py* (Utility Script)
-
-This script collects all `.py` files and combines them into a single `.txt` file.
-
-#### Workflow:
-
-1. Traverse directory
-2. Read all `.py` files
-3. Append contents into one file
-
----
-
-```mermaid
-flowchart TD
-    A[Start] --> B[Scan Directory]
-    B --> C[Find .py Files]
-    C --> D[Read File Content]
-    D --> E[Write to Output File]
-    E --> F[Repeat]
-```
-
----
-
 ## Configuration Options
 
 You can tweak the system behavior using:
@@ -274,13 +160,6 @@ flowchart TD
 
 ## Credits
 
-### - Your Name
 
-GitHub: @yourusername
-
----
-
-If you want, I can also:
-
-* make this **cleaner + more “resume-grade”**
+---* make this **cleaner + more “resume-grade”**
 * or add **screenshots / demo section** which boosts impact a LOT
